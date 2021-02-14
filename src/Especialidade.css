@@ -1,0 +1,9 @@
+.container {
+    margin-top: 10px;
+}
+.card {
+    margin-bottom: 5px;
+    border: solid 1px #e6e7e8;
+    border-radius: 25px;
+    padding: 8px;
+}  
