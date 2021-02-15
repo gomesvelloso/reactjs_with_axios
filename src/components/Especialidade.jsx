@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom';
 import '../Especialidade.css'
 import axios from 'axios'
 
@@ -18,7 +19,10 @@ export default class Especialidade extends Component {
             alert(error)
         })
     }
-
+    mudaLink(dados){
+        let descricao = dados.descricao.replace(/ /g,"-");
+        this.props.history.push('/medicos/'+dados.id+'/'+descricao);
+    }
     render() {
         return(
             <div class="container">
@@ -30,7 +34,7 @@ export default class Especialidade extends Component {
                                     <div class="card">
                                         <div class="card-body">
                                         <h4 class="card-title">{especialidade.descricao}</h4>
-                                        <a href="#" class="btn btn-primary">Listar M&eacute;dicos</a>
+                                        <button class="btn btn-primary" onClick={()=>this.mudaLink(especialidade)} >Listar M&eacute;dicos</button>
                                         </div>
                                     </div>
                                 </div>
@@ -41,4 +45,5 @@ export default class Especialidade extends Component {
             </div>
         )
     }
+
 }
