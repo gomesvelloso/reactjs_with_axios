@@ -21,9 +21,9 @@ export default class Medico extends Component {
         .then(response => {
             
             if(response.data.medicos.length == 0){
-                this.setState({msgErro: 'Nenhum médico encontrado para a especialidade '+response.data.crm+'.'});
+                this.setState({msgErro: 'Nenhum médico encontrado para a especialidade '+response.data.descricao+'.'});
             }
-            this.setState({nome_especialidade:response.data.crm, 
+            this.setState({nome_especialidade:response.data.descricao, 
                            medicos: response.data.medicos,
                            num_medicos: response.data.medicos.length });  
         })
